@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyDirectoryCreator", "EasyDirectoryCreator\EasyDirectoryCreator.csproj", "{2EC6ABB1-CB3F-4D93-9E20-1091BF13C0E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EC6ABB1-CB3F-4D93-9E20-1091BF13C0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC6ABB1-CB3F-4D93-9E20-1091BF13C0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC6ABB1-CB3F-4D93-9E20-1091BF13C0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC6ABB1-CB3F-4D93-9E20-1091BF13C0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {592CA54F-40AC-485E-B3CD-C94AEE70DF72}
+	EndGlobalSection
+EndGlobal
