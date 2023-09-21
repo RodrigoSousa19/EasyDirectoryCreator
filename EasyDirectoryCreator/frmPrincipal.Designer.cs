@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.txtBox = new System.Windows.Forms.TextBox();
             this.pnlLine2 = new System.Windows.Forms.Panel();
@@ -39,9 +40,9 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.txtBoxLog = new System.Windows.Forms.TextBox();
             this.tbLayoutLog = new System.Windows.Forms.TableLayoutPanel();
+            this.lblQuantityNok = new System.Windows.Forms.Label();
             this.btnClearLog = new System.Windows.Forms.Button();
             this.lblQuantityOk = new System.Windows.Forms.Label();
-            this.lblQuantityNok = new System.Windows.Forms.Label();
             this.tbLayout.SuspendLayout();
             this.tbLayoutLog.SuspendLayout();
             this.SuspendLayout();
@@ -186,6 +187,17 @@
             this.tbLayoutLog.Size = new System.Drawing.Size(235, 44);
             this.tbLayoutLog.TabIndex = 8;
             // 
+            // lblQuantityNok
+            // 
+            this.lblQuantityNok.AutoSize = true;
+            this.lblQuantityNok.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQuantityNok.Location = new System.Drawing.Point(120, 22);
+            this.lblQuantityNok.Name = "lblQuantityNok";
+            this.lblQuantityNok.Size = new System.Drawing.Size(112, 22);
+            this.lblQuantityNok.TabIndex = 11;
+            this.lblQuantityNok.Text = "Failed: ";
+            this.lblQuantityNok.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // btnClearLog
             // 
             this.btnClearLog.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -211,23 +223,13 @@
             this.lblQuantityOk.Text = "OK: ";
             this.lblQuantityOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblQuantityNok
-            // 
-            this.lblQuantityNok.AutoSize = true;
-            this.lblQuantityNok.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblQuantityNok.Location = new System.Drawing.Point(120, 22);
-            this.lblQuantityNok.Name = "lblQuantityNok";
-            this.lblQuantityNok.Size = new System.Drawing.Size(112, 22);
-            this.lblQuantityNok.TabIndex = 11;
-            this.lblQuantityNok.Text = "Failed: ";
-            this.lblQuantityNok.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tbLayout);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.Text = "Easy Directory";
             this.tbLayout.ResumeLayout(false);
