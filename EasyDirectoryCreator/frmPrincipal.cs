@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EasyDirectoryCreator.Model;
@@ -90,9 +91,20 @@ namespace EasyDirectoryCreator
                     int substringSize = lastIndex - startIndex - 1;
                     aux = aux.Substring(startIndex + 1, substringSize);
 
-                    List<string> childList = aux.Split(',').ToList();
+                    List<string> subFolders = GetCompleteListFolders(aux);
 
-                    CreateFolderTree(childList, scheme);
+                    foreach (string subFolder in subFolders)
+                    {
+                        List<string> childList = new List<string>();
+
+                        if (!subFolder.Contains("["))
+                            childList = subFolder.Split(',').ToList();
+                        else
+                            childList.Add(subFolder);
+
+                        CreateFolderTree(childList, scheme);
+                    }
+
 
                     if (folderScheme.ChildFolders == null)
                         folderScheme.ChildFolders = new List<FolderScheme>();
@@ -106,6 +118,35 @@ namespace EasyDirectoryCreator
                     folderScheme.ChildFolders.Add(scheme);
                 }
             }
+        }
+
+        private List<string> GetCompleteListFolders(string input)
+        {
+            List<string> resultList = new List<string>();
+
+            int depth = 0;
+            int startIndex = 0;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] == '[')
+                {
+                    depth++;
+                }
+                else if (input[i] == ']')
+                {
+                    depth--;
+                }
+                else if (input[i] == ',' && depth == 0)
+                {
+                    resultList.Add(input.Substring(startIndex, i - startIndex));
+                    startIndex = i + 1;
+                }
+            }
+
+            resultList.Add(input.Substring(startIndex));
+
+            return resultList;
         }
 
         private void CreateFolders(FolderScheme folders, string path)
@@ -136,6 +177,8 @@ namespace EasyDirectoryCreator
                         CreateFolders(folderChild, currentPath);
                     }
                 }
+                else
+                    SetLabelQuantityText();
             }
             catch (Exception e)
             {
@@ -150,19 +193,26 @@ namespace EasyDirectoryCreator
             {
                 case CREATE_STATUS.OK:
                     {
-                        txtBoxLog.Text += textLog;
+                        txtBoxLog.Text += System.Environment.NewLine + textLog;
                         txtBoxLog.Text += System.Environment.NewLine + "====================";
                         quantityOk++;
+
                         break;
                     }
                 case CREATE_STATUS.FALHA:
                     {
-                        txtBoxLog.Text = textLog;
+                        txtBoxLog.Text += System.Environment.NewLine + textLog;
                         txtBoxLog.Text += System.Environment.NewLine + "====================";
                         quantityNok++;
                         break;
                     }
             }
+        }
+
+        private void SetLabelQuantityText()
+        {
+            lblQuantityOk.Text = "Ok: " + quantityOk.ToString();
+            lblQuantityNok.Text = "Failed:" + quantityNok.ToString();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -171,7 +221,7 @@ namespace EasyDirectoryCreator
             {
                 if (txtBox.Text.Length > 0)
                 {
-                    CreateFolders(GetFolderTree(),path);
+                    CreateFolders(GetFolderTree(), path);
                 }
                 else
                 {
@@ -200,7 +250,12 @@ namespace EasyDirectoryCreator
 
         private void button1_Click(object sender, EventArgs e)
         {
+            quantityNok = 0;
+            quantityOk = 0;
+
             this.txtBoxLog.Clear();
+            this.lblQuantityOk.Text = "Ok: ";
+            this.lblQuantityNok.Text = "Failed: ";
         }
     }
 }

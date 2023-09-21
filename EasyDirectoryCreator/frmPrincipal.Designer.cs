@@ -38,8 +38,12 @@
             this.tbLayout = new System.Windows.Forms.TableLayoutPanel();
             this.btnCreate = new System.Windows.Forms.Button();
             this.txtBoxLog = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tbLayoutLog = new System.Windows.Forms.TableLayoutPanel();
+            this.btnClearLog = new System.Windows.Forms.Button();
+            this.lblQuantityOk = new System.Windows.Forms.Label();
+            this.lblQuantityNok = new System.Windows.Forms.Label();
             this.tbLayout.SuspendLayout();
+            this.tbLayoutLog.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBox
@@ -49,18 +53,18 @@
             this.txtBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBox.Location = new System.Drawing.Point(226, 76);
+            this.txtBox.Location = new System.Drawing.Point(247, 76);
             this.txtBox.Multiline = true;
             this.txtBox.Name = "txtBox";
             this.txtBox.ReadOnly = true;
-            this.txtBox.Size = new System.Drawing.Size(571, 321);
+            this.txtBox.Size = new System.Drawing.Size(550, 321);
             this.txtBox.TabIndex = 5;
             this.txtBox.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // pnlLine2
             // 
             this.pnlLine2.BackColor = System.Drawing.Color.Black;
-            this.pnlLine2.Location = new System.Drawing.Point(223, 3);
+            this.pnlLine2.Location = new System.Drawing.Point(244, 3);
             this.pnlLine2.Name = "pnlLine2";
             this.pnlLine2.Size = new System.Drawing.Size(1, 34);
             this.pnlLine2.TabIndex = 4;
@@ -83,7 +87,7 @@
             this.btnSelect.Location = new System.Drawing.Point(0, 43);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(0);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(220, 30);
+            this.btnSelect.Size = new System.Drawing.Size(241, 30);
             this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "Selecionar";
             this.btnSelect.UseVisualStyleBackColor = true;
@@ -96,7 +100,7 @@
             this.lblInstructionNewDirectory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblInstructionNewDirectory.Location = new System.Drawing.Point(3, 0);
             this.lblInstructionNewDirectory.Name = "lblInstructionNewDirectory";
-            this.lblInstructionNewDirectory.Size = new System.Drawing.Size(214, 40);
+            this.lblInstructionNewDirectory.Size = new System.Drawing.Size(235, 40);
             this.lblInstructionNewDirectory.TabIndex = 0;
             this.lblInstructionNewDirectory.Text = "Selecione onde deseja criar a estrutura de pastas";
             this.lblInstructionNewDirectory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,9 +110,9 @@
             this.lblDirectory.AutoSize = true;
             this.lblDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDirectory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblDirectory.Location = new System.Drawing.Point(226, 0);
+            this.lblDirectory.Location = new System.Drawing.Point(247, 0);
             this.lblDirectory.Name = "lblDirectory";
-            this.lblDirectory.Size = new System.Drawing.Size(571, 40);
+            this.lblDirectory.Size = new System.Drawing.Size(550, 40);
             this.lblDirectory.TabIndex = 1;
             this.lblDirectory.Text = "Diretório: ";
             this.lblDirectory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -116,9 +120,9 @@
             // tbLayout
             // 
             this.tbLayout.ColumnCount = 3;
-            this.tbLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.72898F));
+            this.tbLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.23839F));
             this.tbLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
-            this.tbLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.27102F));
+            this.tbLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.7616F));
             this.tbLayout.Controls.Add(this.lblDirectory, 2, 0);
             this.tbLayout.Controls.Add(this.lblInstructionNewDirectory, 0, 0);
             this.tbLayout.Controls.Add(this.btnSelect, 0, 2);
@@ -127,7 +131,7 @@
             this.tbLayout.Controls.Add(this.txtBox, 2, 3);
             this.tbLayout.Controls.Add(this.btnCreate, 2, 4);
             this.tbLayout.Controls.Add(this.txtBoxLog, 0, 3);
-            this.tbLayout.Controls.Add(this.button1, 0, 4);
+            this.tbLayout.Controls.Add(this.tbLayoutLog, 0, 4);
             this.tbLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbLayout.Location = new System.Drawing.Point(0, 0);
             this.tbLayout.Name = "tbLayout";
@@ -162,19 +166,61 @@
             this.txtBoxLog.Name = "txtBoxLog";
             this.txtBoxLog.ReadOnly = true;
             this.txtBoxLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxLog.Size = new System.Drawing.Size(220, 327);
+            this.txtBoxLog.Size = new System.Drawing.Size(241, 327);
             this.txtBoxLog.TabIndex = 7;
             // 
-            // button1
+            // tbLayoutLog
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(3, 403);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 44);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Limpar Logs";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tbLayoutLog.ColumnCount = 2;
+            this.tbLayoutLog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbLayoutLog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbLayoutLog.Controls.Add(this.lblQuantityNok, 1, 1);
+            this.tbLayoutLog.Controls.Add(this.btnClearLog, 0, 0);
+            this.tbLayoutLog.Controls.Add(this.lblQuantityOk, 1, 0);
+            this.tbLayoutLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbLayoutLog.Location = new System.Drawing.Point(3, 403);
+            this.tbLayoutLog.Name = "tbLayoutLog";
+            this.tbLayoutLog.RowCount = 2;
+            this.tbLayoutLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbLayoutLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbLayoutLog.Size = new System.Drawing.Size(235, 44);
+            this.tbLayoutLog.TabIndex = 8;
+            // 
+            // btnClearLog
+            // 
+            this.btnClearLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClearLog.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnClearLog.Location = new System.Drawing.Point(0, 0);
+            this.btnClearLog.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClearLog.Name = "btnClearLog";
+            this.tbLayoutLog.SetRowSpan(this.btnClearLog, 2);
+            this.btnClearLog.Size = new System.Drawing.Size(117, 44);
+            this.btnClearLog.TabIndex = 9;
+            this.btnClearLog.Text = "Limpar Logs";
+            this.btnClearLog.UseVisualStyleBackColor = true;
+            this.btnClearLog.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblQuantityOk
+            // 
+            this.lblQuantityOk.AutoSize = true;
+            this.lblQuantityOk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQuantityOk.Location = new System.Drawing.Point(120, 0);
+            this.lblQuantityOk.Name = "lblQuantityOk";
+            this.lblQuantityOk.Size = new System.Drawing.Size(112, 22);
+            this.lblQuantityOk.TabIndex = 10;
+            this.lblQuantityOk.Text = "OK: ";
+            this.lblQuantityOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblQuantityNok
+            // 
+            this.lblQuantityNok.AutoSize = true;
+            this.lblQuantityNok.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQuantityNok.Location = new System.Drawing.Point(120, 22);
+            this.lblQuantityNok.Name = "lblQuantityNok";
+            this.lblQuantityNok.Size = new System.Drawing.Size(112, 22);
+            this.lblQuantityNok.TabIndex = 11;
+            this.lblQuantityNok.Text = "Failed: ";
+            this.lblQuantityNok.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmPrincipal
             // 
@@ -183,9 +229,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tbLayout);
             this.Name = "frmPrincipal";
-            this.Text = "Form1";
+            this.Text = "Easy Directory";
             this.tbLayout.ResumeLayout(false);
             this.tbLayout.PerformLayout();
+            this.tbLayoutLog.ResumeLayout(false);
+            this.tbLayoutLog.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -201,6 +249,9 @@
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.TextBox txtBoxLog;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tbLayoutLog;
+        private System.Windows.Forms.Button btnClearLog;
+        private System.Windows.Forms.Label lblQuantityOk;
+        private System.Windows.Forms.Label lblQuantityNok;
     }
 }
