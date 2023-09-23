@@ -81,7 +81,7 @@ namespace EasyDirectoryCreator
                 {
                     aux += folder;
 
-                    string parent = aux.Split("[")[0];
+                    string parent = aux.Split("[")[0].Trim();
 
                     scheme.FolderParent = parent;
 
@@ -100,7 +100,7 @@ namespace EasyDirectoryCreator
                         if (!subFolder.Contains("["))
                             childList = subFolder.Split(',').ToList();
                         else
-                            childList.Add(subFolder);
+                            childList.Add(subFolder.Trim());
 
                         CreateFolderTree(childList, scheme);
                     }
@@ -113,7 +113,7 @@ namespace EasyDirectoryCreator
                 }
                 else
                 {
-                    scheme.FolderParent = folder;
+                    scheme.FolderParent = folder.Trim();
 
                     folderScheme.ChildFolders.Add(scheme);
                 }
